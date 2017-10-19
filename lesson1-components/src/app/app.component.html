@@ -1,9 +1,17 @@
 <input type="text" (input)="inputValue = $event.target.value">
 
-<app-user
+<app-user 
    [x]="inputValue"
    (done)="result = $event"
 ></app-user>
+
+<div *ngIf="result != 0"></div>
+
+<ng-template [ngIf]="result != 0">
+  <div></div>
+</ng-template>
+
+<div appLogClicks>asdfadsfdsaf</div>
 
 {{result}}
 

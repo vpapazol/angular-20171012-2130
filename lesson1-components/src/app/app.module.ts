@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { LogClicksDirective } from './log-clicks.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    LogClicksDirective
   ],
   imports: [
     BrowserModule

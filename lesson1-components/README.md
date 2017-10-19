@@ -9,6 +9,19 @@ Angular 4
 
 Angular
 
-
 MVC - MVVM - ?
+
+Components/Directive
+
+Directives:
+- Components
+- Attr Directives
+- Structural directives
+
+
+<div *myIf></div>
+
+<template myIf>
+  <div></div>
+</template>
 
