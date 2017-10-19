@@ -1,0 +1,20 @@
+<input type="text" (input)="inputValue = $event.target.value">
+
+<app-user
+   [x]="inputValue"
+   (done)="result = $event"
+></app-user>
+
+{{result}}
+
+
+<!-- [user-card-list]
+  [user-card  x]
+  [user-card  x]
+  [user-card  x]
+  [user-card  x]
+  [user-card  x]
+  [user-card  x]
+
+
+[search-input] -->
