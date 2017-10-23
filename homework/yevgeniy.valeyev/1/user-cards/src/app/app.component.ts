@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { USERS } from './users';
+import { UsersService } from './users.service';
+import { Component, OnInit } from '@angular/core';
 import { User, UserSelectionData } from './interfaces';
 import * as utils from './utils';
 
@@ -8,10 +8,16 @@ import * as utils from './utils';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
-  users: User[] = USERS;
+  users: User[];
   selectedUserIds: number[] = [];
+
+  constructor(private usersService: UsersService) {}
+
+  ngOnInit () {
+    this.usersService.getAll().subscribe((users) => this.users = users);
+  }
 
   deleteUser (user: UserSelectionData) {
     const index = this.users.findIndex(({id}) => user.id === id);
