@@ -3,12 +3,12 @@ import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  templateUrl: './user-list.component.html'
 })
 
 export class UserListComponent implements OnInit {
   public users:any;
+  public active:number;
 
   constructor(public _userService: UserService) {
     
