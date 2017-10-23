@@ -1,0 +1,10 @@
+<div class="{{cardStyle}}" (click)="toggleCardStyle()">
+  <img src="assets/images/img_avatar2.png" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>{{user?.name}}</b></h4>
+    <p>Description of {{user?.name}}</p>
+  </div>
+  <button (click)="removeUser(user?.name)">
+    remove
+  </button>
+</div>
