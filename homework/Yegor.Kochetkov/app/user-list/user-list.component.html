@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-md-6">
       <ul>
-        <li class="user-list" [style.background]="(selectedUser == user) ? 'yellow' : ''" *ngFor="let user of users">
+        <li class="user-list" 
+            [style.background]="(selectedUser == user) ? 'yellow' : ''" 
+            *ngFor="let user of users">
           <app-user-card [user]="user" (userSelected)="selectedUser = user"></app-user-card>
           <span class="pointer" (click)="removeUser(user.name)">X</span>
         </li>

@@ -16,6 +16,9 @@ export class UserCardItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  //Observable.of(true).toPromise().then()
+  //Observable.of(true).subscribe().catch()
+
   removeCard(user) {
     this.remove.emit(user);
   }
