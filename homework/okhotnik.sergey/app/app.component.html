@@ -1,0 +1,3 @@
+<div class="card-group">
+  <app-user-card *ngFor="let user of users" [userSentFromApp]="user" (userSelected)="removeUser(user)"></app-user-card>
+</div>
