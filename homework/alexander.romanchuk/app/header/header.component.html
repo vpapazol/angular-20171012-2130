@@ -1,0 +1,10 @@
+
+
+  <div style="width: 10%" *ngFor="let user of users">
+    <app-user-card [user]="user" (userToRemove)="removeUser($event)"></app-user-card>
+    <p></p>
+  </div>
+
+  <input #usernameElement><button (click)="addUser(usernameElement.value); usernameElement.value = ''">Add user</button>
+
+
