@@ -30,13 +30,15 @@ export class UsersListComponent implements OnInit {
     },
   ];
 
+  public selectedIndex;
 
-
-  public removeItem($event: number): void {
-    this.userlist.splice($event, 1);
+  public removeItem(user): void {
+    this.userlist = this.userlist.filter(userItem => user != userItem);
   }
 
-
+  public addActiveClass(item) {
+    this.selectedIndex = item;
+  }
 
   constructor() {
   }
