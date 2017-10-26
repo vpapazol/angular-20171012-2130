@@ -11,25 +11,25 @@ export class UsersService {
         fullName: 'James',
         email: 'test1@gmail.com',
         avatarUrl: 'https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/boy-512.png',
-        birthdate: new Date(2015, 4, 1)
+        birthdate: '1992-03-22T18:25:43.511Z'
       },
       {
         fullName: 'Kate',
         email: 'test2@gmail.com',
         avatarUrl: 'https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/girl-512.png',
-        birthdate: new Date(1993, 2, 4)
+        birthdate: '1994-02-21T18:25:43.511Z'
       },
       {
         fullName: 'William',
         email: 'test3@gmail.com',
         avatarUrl: 'https://i2.wp.com/www.mesrobian.org/wp-content/uploads/2016/10/Avatar-Male.png?resize=180%2C180',
-        birthdate: new Date(1991, 3, 1)
+        birthdate: '2011-04-22T18:25:43.511Z'
       },
       {
         fullName: 'John',
         email: 'test4@gmail.com',
         avatarUrl: 'https://pbs.twimg.com/profile_images/867283888791486464/cL6V1073.jpg',
-        birthdate: new Date(1996, 3, 7)
+        birthdate: '1991-05-23T18:25:43.511Z'
       },
     ]
   }
