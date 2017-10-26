@@ -1,10 +1,10 @@
 <ul class="cards-list">
   <li
       *ngFor="let user of users"
-      [class]="user.selected"
+      [class]="user?.selected"
   >
     <app-user-card
-        *ngIf="user.visible"
+        *ngIf="!user.hidden"
         [user]="user"
         (cardSelected)="selectUser(user)"
         (cardHide)="hideCard(user)"
