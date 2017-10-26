@@ -1,7 +1,9 @@
 export class UserCard {
-  id: number;
-  firstName: string;
-  lastName: string;
-  profession: string;
-  age: number;
+  _id: string;
+  fullName: string;
+  email: string;
+  avatarUrl: string;
+  birthDate: Date;
+  gender: string;
+  address: string;
 }
