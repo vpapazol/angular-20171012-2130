@@ -9,14 +9,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UserCardComponent implements OnInit {
 
   @Input('user') user: IUser;
-  @Output('onDelete') onDelete: EventEmitter<number> = new EventEmitter();
+  @Output('onDelete') onDelete: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  delete(id: number): void{
+  delete(id: string) {
     this.onDelete.emit(id);
   }
 
