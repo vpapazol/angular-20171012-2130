@@ -12,21 +12,16 @@
   clear: both;
 }
 
-.user-card__image{
+.user-card__avatar{
   float: left;
   width: 48px;
   height: 48px;
+  line-height: 48px;
   margin-right: 20px;
   background-color: #cccccc;
   border-radius: 50%;
+  text-align: center;
   overflow: hidden;
-}
-
-.user-card__thumb{
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
 }
 
 .user-card__info{
