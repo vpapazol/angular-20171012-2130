@@ -9,9 +9,10 @@ export class UserService {
     return this._http.get('http://test-api.javascript.ru/v1/vladyer/users');
   }
 
-  /*public remove(name: string) {
-    return this.users.filter(user => user.name !== name);
-  }*/
-
+  public removeUser(id: string) {
+    const url = `http://test-api.javascript.ru/v1/vladyer/users/${id}`;
+    alert(url);  //алерт с правильным урл срабатывает
+    this._http.delete(url);  //пользователь не удаляется 
+  }
 
 }

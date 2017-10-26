@@ -8,6 +8,7 @@
         [user]="user"
         (cardSelected)="selectUser(user)"
         (cardHide)="hideCard(user)"
+        (userDelete)="deleteUser(user._id)"
     ></app-user-card>
   </li>
 </ul>

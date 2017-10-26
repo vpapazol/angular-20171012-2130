@@ -43,4 +43,8 @@ export class MainComponent implements OnInit {
     user.hidden = true;
   }
 
+  public deleteUser(userId) {
+    this._userService.removeUser(userId);
+  }
+
 }
