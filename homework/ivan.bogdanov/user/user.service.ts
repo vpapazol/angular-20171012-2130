@@ -4,11 +4,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class UserService {
 
-  public userlist = {
-    users: [
-      {fullName: 'Ivan', email: 'ivan@mail.ru', gender: 'M', birthdate: new Date(1986, 4, 30)}
-    ]
-  };
+  private userlist;
   private getUser;
 
   constructor(private _http: HttpClient) {
@@ -16,33 +12,29 @@ export class UserService {
   }
 
   public removeUser(id: string) {
-    return this._http.delete('http://test-api.javascript.ru/v1/bogdanovip/users/' + id);
+    return this._http.delete('http://test-api.javascript.ru/v1/bogdanovip/users/' + id, {responseType: 'text'});
   }
 
   public getUsers() {
     return this.getUser;
   }
 
-  public addUser() {
+  public addUser(userName: string, userEmail: string, userBirthday: Date, userGender: string) {
+    this.userlist = {
+      users: [
+        {fullName: userName, email: userEmail, gender: userGender, birthdate: userBirthday}
+      ]
+    };
     return this._http.post('http://test-api.javascript.ru/v1/bogdanovip', this.userlist);
   }
 }
 
 export class User {
-  public _id: string;
-  public fullName: string;
-  public email: string;
-  public avatarUrl: string;
-  public birthdate: Date;
-  public gender: string;
-  public address: string;
-
-  constructor(fullName: string, email: string, avatarUrl: string, birthdate: Date, gender: string, address: string) {
-    this.fullName = fullName;
-    this.email = email;
-    this.avatarUrl = avatarUrl;
-    this.birthdate = birthdate;
-    this.gender = gender;
-    this.address = address;
-  }
+  _id: string;
+  fullName: string;
+  email: string;
+  avatarUrl: string;
+  birthdate: Date;
+  gender: string;
+  address: string;
 }

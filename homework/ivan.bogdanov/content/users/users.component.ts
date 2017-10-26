@@ -8,11 +8,9 @@ import {UserService, User} from '../../user/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  users;
+  users: Array<User>;
 
   public selectedUser: User;
-
-  private response;
 
   constructor(private _userService: UserService) {
   }
@@ -34,9 +32,8 @@ export class UsersComponent implements OnInit {
   }
 
   removeUser(id: string): void {
-    this.response = this._userService.removeUser(id)
+    this._userService.removeUser(id)
       .subscribe(
-        () => this.updateUsers(),
         () => this.updateUsers());
   }
 
@@ -48,10 +45,9 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  addUser() {
-    this._userService.addUser()
+  addUser(userName: string, userEmail: string, userBirthday: Date, userGender: string) {
+    this._userService.addUser(userName, userEmail, userBirthday, userGender)
       .subscribe(
-        () => this.updateUsers(),
         () => this.updateUsers());
   }
 }
