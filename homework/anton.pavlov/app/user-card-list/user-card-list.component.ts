@@ -30,6 +30,9 @@ export class UserCardListComponent implements OnInit {
         this.updateUsers();
       });
   }
+  /* removeUser(id: number) {
+    this._userService.remove(id).subscribe(() => this.updateUsers());
+  }*/
   fillDb() {
     this._userService.fillDB().subscribe(
       () => {

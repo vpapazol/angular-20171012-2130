@@ -28,10 +28,10 @@ export class UserService {
 
   public fillDB() {
     return this._http.post('http://test-api.javascript.ru/v1/tonyp/', this.userList);
+    // return this._http.post('http://test-api.javascript.ru/v1/tonyp/users', this.users);
   }
 
   public remove(id: string) {
-    // return this.users = this.users.filter(user => user.fullName !== name);
     return this._http.delete('http://test-api.javascript.ru/v1/tonyp/users/' + id);
   }
 
