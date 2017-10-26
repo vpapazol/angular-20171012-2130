@@ -6,8 +6,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public result: number = 0;
-  public inputValue: number = 10;
+  public result = 0;
+  public inputValue = 10;
 
   public static title = 'app';
   private id = 100;

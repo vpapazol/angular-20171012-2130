@@ -1,5 +1,10 @@
 <input type="text" (input)="inputValue = $event.target.value">
 
+{{1 | sex }}
+{{111111 | date: 'fullDate'}}
+<!-- {{ user | json }} -->
+
+
 <app-user 
    [x]="inputValue"
    (done)="result = $event"
