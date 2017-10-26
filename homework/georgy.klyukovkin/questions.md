@@ -27,5 +27,4 @@ user.service.ts строка 79(но это не точно), в методе pu
 (user-list.component.ts строка 46),
 но объект из массива на сервере тем не менее удаляется. Почему
 
-
 Unexpected token o in JSON at position 0 at Object.parse
