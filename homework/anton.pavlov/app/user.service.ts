@@ -1,5 +1,13 @@
+import { Observable } from 'rxjs/Rx';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+
+type TUser = {
+  fullName: string, 
+  email: string , 
+  gender: 'M'| 'Ж', 
+  birthdate: string
+}
 
 @Injectable()
 export class UserService {
@@ -23,11 +31,11 @@ export class UserService {
 
   public getAll() {
     // return this.users;
-    return this._http.get('http://test-api.javascript.ru/v1/tonyp/users');
+    return this._http.get<TUser[]>('http://test-api.javascript.ru/v1/tonyp/users');
   }
 
   public fillDB() {
-    return this._http.post('http://test-api.javascript.ru/v1/tonyp/', this.userList);
+    return this._http.post<TUser[]>('http://test-api.javascript.ru/v1/tonyp/', this.userList);
     // return this._http.post('http://test-api.javascript.ru/v1/tonyp/users', this.users);
   }
 
