@@ -44,10 +44,4 @@ export class UsersComponent implements OnInit {
       this.selectedUser = null;
     }
   }
-
-  addUser(userName: string, userEmail: string, userBirthday: Date, userGender: string) {
-    this._userService.addUser(userName, userEmail, userBirthday, userGender)
-      .subscribe(
-        () => this.updateUsers());
-  }
 }

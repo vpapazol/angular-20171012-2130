@@ -7,13 +7,15 @@ import {ContentComponent} from './content/content.component';
 import {UsersComponent} from './content/users/users.component';
 import {UserCardComponent} from './content/users/user-card/user-card.component';
 import {UserService} from './user/user.service';
+import { UserAddComponent } from './content/users/user-add/user-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentComponent,
     UsersComponent,
-    UserCardComponent
+    UserCardComponent,
+    UserAddComponent
   ],
   imports: [
     BrowserModule,
