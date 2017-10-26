@@ -6,9 +6,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./user-card.component.css']
 })
 export class UserCardComponent implements OnInit {
+  public cardClass = 'card';
 
   @Input() user;
-  @Output() userSelected: EventEmitter<any> = new EventEmitter();
   @Output() userRemoved: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -17,9 +17,13 @@ export class UserCardComponent implements OnInit {
   }
 
   selectUser() {
-    this.userSelected.emit();
+    if (this.cardClass === 'selected') {
+      this.cardClass = 'card';
+    } else {
+      this.cardClass = 'selected';
+    }
   }
-  removeUser(name) {
-    this.userRemoved.emit(name);
+  removeUser(id) {
+    this.userRemoved.emit(id);
   }
 }
