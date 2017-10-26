@@ -9,34 +9,36 @@ import { UserService } from '../user.service';
 export class UserCardListComponent implements OnInit {
   public user;
   public users;
-  public userSelected;
 
   constructor(private _userService: UserService) {
   }
 
   ngOnInit() {
-    this.users = this._userService.getAll();//.subscribe(users => this.users = users);
+    // this.users = this._userService.getAll();
+    this.updateUsers();
+  }
+  updateUsers() {
+    this._userService.getAll().subscribe(users => this.users = users);
   }
 
-  removeUser(name: string) {
-    console.log('event: ' + name);
-    this._userService.remove(name);
-    this.users = this._userService.getAll();
+  removeUser(id: string) {
+    this._userService.remove(id).subscribe(
+      () => {
+        this.updateUsers();
+      },
+      () => {
+        this.updateUsers();
+      });
   }
-
-  selectCard(element) {
-    /*
-    for (let i = 0; i < this.users.length; i++) {
-      this.users[i].class = 'card';
-    }
-*/
-    if(element.class === 'selected')
-    {
-      element.class = 'card';
-    }
-    else {
-      element.class = 'selected';
-    }
+  fillDb() {
+    this._userService.fillDB().subscribe(
+      () => {
+        this.updateUsers();
+      },
+      () => {
+        this.updateUsers();
+      }
+    );
   }
 
 }
