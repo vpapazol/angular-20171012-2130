@@ -7,15 +7,18 @@ import {UserService} from "../user.service";
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  private _userService;
   public users;
 
-  constructor(userService: UserService) {
-    this._userService = userService;
+  constructor(
+      private _userService: UserService
+  ) {
   }
 
   ngOnInit() {
-    this.users = this._userService.getAll();
+    this._userService.getAll().subscribe((users) => {
+      this.users = users;
+      console.log(this.users)
+    });
   }
 
   public selectedUser = null;
@@ -37,7 +40,11 @@ export class MainComponent implements OnInit {
   }
 
   public hideCard(user) {
-    user.visible = false;
+    user.hidden = true;
+  }
+
+  public deleteUser(userId) {
+    this._userService.removeUser(userId);
   }
 
 }

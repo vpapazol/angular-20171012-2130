@@ -9,6 +9,7 @@ export class UserCardComponent implements OnInit {
   @Input() user;
   @Output() cardSelected: EventEmitter<any> = new EventEmitter();
   @Output() cardHide: EventEmitter<any> = new EventEmitter();
+  @Output() userDelete: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
 
@@ -21,5 +22,10 @@ export class UserCardComponent implements OnInit {
 
   selectCard() {
     this.cardSelected.emit();
+  }
+
+  deleteUser(event) {
+    event.stopPropagation();
+    this.userDelete.emit();
   }
 }
