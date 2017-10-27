@@ -10,7 +10,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UsersService {
 
-  constructor(private http: HttpClient, @Inject(APP_CONFIG) private config: AppConfig) {}
+  constructor(
+    private http: HttpClient, 
+    @Inject(APP_CONFIG) private config: AppConfig
+  ) {}
 
   getAll () {
     return this.http

@@ -1,8 +1,8 @@
-<div [class]="user.class" (click)="selectUser()">
-  <h1>{{user.name}}</h1>
-  <p class="title">{{user.occupation}}, {{user.company}}</p>
-  <p>{{user.university}}</p>
+<div [class]="cardClass" (click)="selectUser()">
+  <h1>{{user.fullName}}</h1>
+  <p class="title">{{user.email}}</p>
+  <p>{{user.birthdate | date: 'shortDate'}}</p>
   <p>
-    <button (click)="removeUser(user.name)">Remove</button>
+    <button (click)="removeUser(user._id)">Remove</button>
   </p>
 </div>
