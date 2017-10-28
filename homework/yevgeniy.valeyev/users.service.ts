@@ -2,17 +2,18 @@ import { User } from './user.model';
 import { UserResponse, UserRequest } from './interfaces';
 import { AppConfig, APP_CONFIG } from './config';
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Injector, OnInit } from '@angular/core';
+import { Injectable, Injector, OnInit, Inject } from '@angular/core';
 
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersService {
 
-  config;
+  private config;
 
-  constructor(private http: HttpClient, private injector: Injector) {
-    this.config = this.injector.get(APP_CONFIG);
+  constructor(
+    private http: HttpClient, 
+    @Inject(APP_CONFIG) config: AppConfig) {
   }
 
   getAll () {
