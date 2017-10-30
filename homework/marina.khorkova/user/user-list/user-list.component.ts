@@ -1,9 +1,9 @@
 import { UserService } from './../user.service';
-import { IUser } from './../user.interface';
+import { IUser } from '../../interfaces/user.interface';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-user-list',
+  selector: 'valoo-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
