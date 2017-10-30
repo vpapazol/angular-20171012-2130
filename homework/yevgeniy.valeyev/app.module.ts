@@ -3,7 +3,6 @@ import { AuthGuardService } from './auth-guard.service';
 import { EmailsService } from './emails.service';
 import { APP_CONFIG_DATA } from './config/config';
 import { APP_CONFIG } from './config/tokens';
-import { UsersService } from './users.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, InjectionToken, ReflectiveInjector, Injector } from '@angular/core';
@@ -23,12 +22,9 @@ import { EmailComponent } from './email/email.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     MyDateFormatPipe,
-    AddUserComponent,
     EmailsListComponent,
     LoginComponent,
-    UsersListComponent,
     EmailsNavigationComponent,
     EmailComponent
   ],
@@ -45,7 +41,6 @@ import { EmailComponent } from './email/email.component';
     ])
   ],
   providers: [
-    UsersService,
     EmailsService,
     AuthGuardService,
     AuthService,
