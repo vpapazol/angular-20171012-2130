@@ -1,25 +1,79 @@
-import { UserService } from './user/user.service';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { UserCardComponent } from './user/user-card/user-card.component';
+import { AuthComponent } from './auth/auth.component';
+import { MailRootComponent } from './mail/mail-root/mail-root.component';
+import { MailListComponent } from './mail/mail-list/mail-list.component';
+import { MailDetailComponent } from './mail/mail-detail/mail-detail.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { MailService } from './mail/mail.service';
+import { MessageService } from './mail/message.service';
+import { InitialsPipe } from './pipes/initials.pipe';
+import { UserService } from './user/user.service';
 import { UserListComponent } from './user/user-list/user-list.component';
-import { InitialsPipe } from './initials.pipe';
+import { UserCardComponent } from './user/user-card/user-card.component';
+import { MailListItemComponent } from './mail/mail-list-item/mail-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserCardComponent,
+    AuthComponent,
+    MailRootComponent,
+    MailListComponent,
+    MailDetailComponent,
+    ContactsComponent,
     UserListComponent,
-    InitialsPipe
+    UserCardComponent,
+    InitialsPipe,
+    MailListItemComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: AuthComponent
+      },
+      {
+        path: 'mail',
+        component: MailRootComponent,
+        children: [
+          {
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'inbox'
+          },
+          {
+            path: ':boxId',
+            component: MailListComponent
+          },
+          {
+            path: ':boxId/:messageId',
+            component: MailDetailComponent
+          }
+        ]
+      },
+      {
+        path: 'contacts',
+        component: ContactsComponent
+      },
+      {
+        path: '**',
+        redirectTo: ''
+      }
+    ])
   ],
-  providers: [UserService, InitialsPipe],
+  providers: [
+    MailService,
+    MessageService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

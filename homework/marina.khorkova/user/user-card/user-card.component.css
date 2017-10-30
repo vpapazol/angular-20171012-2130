@@ -1,7 +1,7 @@
 .user-card{
   position: relative;
   padding: 20px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 3px
 }
 
@@ -18,7 +18,7 @@
   height: 48px;
   line-height: 48px;
   margin-right: 20px;
-  background-color: #cccccc;
+  background-color: #ccc;
   border-radius: 50%;
   text-align: center;
   overflow: hidden;
@@ -39,6 +39,8 @@
   top: 10px;
   width: 20px;
   height: 20px;
+  margin: 0;
+  padding: 0;
   font-size: 18px;
   line-height: 1;
   text-align: center;
