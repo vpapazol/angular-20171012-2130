@@ -1,12 +1,7 @@
-<add-user (onAdd)="addUser($event)"></add-user>
-<card *ngFor="let user of users"
-  (onDelete)="deleteUser($event)"
-  [isSelected]="selectedUserId === user.id"
-  (onSelect)="toggleUserSelection($event)"
-  (onDeselect)="toggleUserSelection($event)"
-  [user]="user">
-</card>
-<p *ngIf="users.length === 0">
-  <em>Users collection is empty</em>
-</p>
+<div class="container">
+  <button *ngIf="isLoggedIn()" class="btn" (click)="logout()">
+    Logout
+  </button>
+  <router-outlet></router-outlet>
+</div>
 
