@@ -25,7 +25,7 @@ export class LetterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.lettersService.getOneLetter('https://api.mlab.com/api/1/databases/angular/collections/' + this.urlRoute + this.oneLetterShow.userId + '?apiKey=IDfsaUTMyV7Yis-KmKjiO-51QX9RRxvM').subscribe(
+    this.lettersService.getOneLetter(this.urlRoute, this.oneLetterShow.userId).subscribe(
       letter => {
         setTimeout(() => { //добавил для демонстрации loader анимации
           this.oneLetterShow = letter;

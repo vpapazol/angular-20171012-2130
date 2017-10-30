@@ -35,27 +35,27 @@ const appRoutes: Routes = [
         path: 'spam',
         component: BoxListComponent,
         data: {
-          url: 'https://api.mlab.com/api/1/databases/angular/collections/spam-letters' + apiKey,
+          url: 'spam-letters',
         },
       },
       {
         path: 'inbox',
         component: BoxListComponent,
         data: {
-          url: 'https://api.mlab.com/api/1/databases/angular/collections/letters' + apiKey,
+          url: 'letters'
         },
       },
       {
         path: 'draft',
         component: BoxListComponent,
         data: {
-          url: 'https://api.mlab.com/api/1/databases/angular/collections/draft-letters' + apiKey,
+          url: 'draft-letters',
         },
       },
       {
         path: 'sent',
         data: {
-          url: 'https://api.mlab.com/api/1/databases/angular/collections/sent-letters' + apiKey,
+          url: 'sent-letters',
         },
         component: BoxListComponent,
       },
