@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IUser } from './user.interface';
+import { IUser } from '../interfaces/user.interface';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -10,12 +10,12 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  public getAll(): Observable<object> {
-    return this.http.get(this.api);
+  public getAll(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(this.api);
   }
 
-  public addUser(user: IUser): Observable<object> {
-    return this.http.post(this.api, user);
+  public addUser(user: IUser): Observable<IUser> {
+    return this.http.post<IUser>(this.api, user);
   }
 
   public deleteUser(id: string): Observable<string> {
